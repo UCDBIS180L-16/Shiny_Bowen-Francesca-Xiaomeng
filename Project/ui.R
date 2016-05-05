@@ -15,7 +15,7 @@ shinyUI(fluidPage( #create the overall page
   sidebarLayout(
     sidebarPanel(
       radioButtons("Phenotype", #the input variable that the value will go into
-                   "Choose a trait to compare to protein content:",
+                   "Choose a trait to compare to Protein content:",
                    c("Amylose.content",
                      "Seed.length",
                      "Seed.width")
