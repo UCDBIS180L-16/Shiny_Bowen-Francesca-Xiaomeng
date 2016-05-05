@@ -31,11 +31,11 @@ shinyServer(function(input, output) {
                  #correctly.  The other variables need to be quoted
                  aes_string(x="Protein.content",
                             y=input$Phenotype,
-                            fill="Region"
+                            color="Region"
                             )
     )
     
     # draw the boxplot for the specified trait
-    pl + geom_point()
+    pl + geom_point() + scale_color_brewer(type="div")
   })
 })
