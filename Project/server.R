@@ -36,6 +36,6 @@ shinyServer(function(input, output) {
     )
     
     # draw the boxplot for the specified trait
-    pl + geom_point()
+    pl + geom_point() + scale_color_brewer(type="div")
   })
 })
