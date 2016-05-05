@@ -1,3 +1,4 @@
+
 #Project!
 # This is the server logic of a Shiny web application. You can run the 
 # application by clicking 'Run App' above.
@@ -7,20 +8,34 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
 
-# Define server logic required to draw a histogram
+library(shiny)
+library(ggplot2)
+
+# Define server logic required to draw a boxplot
 shinyServer(function(input, output) {
-   
-  output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
-  })
   
+  # Expression that generates a boxplot. The expression is
+  # wrapped in a call to renderPlot to indicate that:
+  #
+  #  1) It is "reactive" and therefore should re-execute automatically
+  #     when inputs change
+  #  2) Its output type is a plot
+  
+  output$point <- renderPlot({
+    rice.data <- read.csv("RiceDiversity.44K.MSU6.Phenotypes.csv")
+    
+    # set up the plot
+    pl <- ggplot(data = rice.data,
+                 #Use aes_string below so that input$trait is interpreted
+                 #correctly.  The other variables need to be quoted
+                 aes_string(x="Protein.content",
+                            y=input$Phenotype,
+                            fill="Region"
+                            )
+    )
+    
+    # draw the boxplot for the specified trait
+    pl + geom_point()
+  })
 })
