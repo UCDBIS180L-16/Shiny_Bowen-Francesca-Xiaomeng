@@ -31,7 +31,7 @@ shinyServer(function(input, output) {
                  #correctly.  The other variables need to be quoted
                  aes_string(x="Protein.content",
                             y=input$Phenotype,
-                            fill="Region"
+                            color="Region"
                             )
     )
     
