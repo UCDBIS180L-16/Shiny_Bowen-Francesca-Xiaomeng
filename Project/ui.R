@@ -7,8 +7,8 @@ shinyUI(fluidPage( #create the overall page
   titlePanel("Rice data. Comparing protein content to other traits"),
   
   # Some helpful information
-  helpText("This application creates a boxplot to show difference between",
-           "Seed volume, lenght, width filled by region.Please use the radio box below to choose a species",
+  helpText("This application creates a boxplot to show the difference between",
+           "seed volume, length, width coloured by the region of the world they are found in. Please use the radio box below to choose a species",
            "for plotting"),
   
   # Sidebar with a radio box to input which trait will be plotted
