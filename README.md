@@ -1,3 +1,17 @@
+<<<<<<< HEAD
 # Shiny_Bowen-Francesca-Xiaomeng
 
 geno.pheno data chart using R Scatterplot x and y: protein content and seed.volume fill by region user changes: seed.volume | Amylose.content | seed width
+=======
+# Shiny_Bowen-Henry-Anushriya
+
+##Rice data project
+geno.pheno data chart
+using R Scatterplot
+x and y: protein content and seed.volume
+fill by region
+user changes: seed.volume | Amylose.content | seed width
+>>>>>>> b10b77cfdd6c36a81798ff52614e52b052be749c
+
+Link to deployed app:
+https://anushriya.shinyapps.io/Project/
